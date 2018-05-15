@@ -4,8 +4,16 @@ const Dinosaur = require('../dinosaur.js');
 
 describe('Park', function() {
   let park;
+  let dinosaur;
+  let dinosaur2;
+  let dinosaur3;
+
   beforeEach(function () {
     park = new Park('Jurassic Park', 20);
+    dinosaur = new Dinosaur('t-rex', 'carnivore', 50);
+    dinosaur2 = new Dinosaur('t-rex', 'carnivore', 80);
+    dinosaur3 = new Dinosaur('branquio', 'carnivore', 20);
+
   })
 
   it('should have a name', function () {
@@ -39,9 +47,6 @@ describe('Park', function() {
   });
 
   it('should be able to find all dinosaurs of a particular species', function () {
-    dinosaur = new Dinosaur('t-rex', 'carnivore', 50);
-    dinosaur2 = new Dinosaur('t-rex', 'carnivore', 50);
-    dinosaur3 = new Dinosaur('branquio', 'carnivore', 50);
     park.addDinosaur(dinosaur);
     park.addDinosaur(dinosaur2);
     park.addDinosaur(dinosaur3);
@@ -50,9 +55,6 @@ describe('Park', function() {
   });
 
   it('should be able to remove all dinosaurs of a particular species', function () {
-    dinosaur = new Dinosaur('t-rex', 'carnivore', 50);
-    dinosaur2 = new Dinosaur('t-rex', 'carnivore', 50);
-    dinosaur3 = new Dinosaur('branquio', 'carnivore', 50);
     park.addDinosaur(dinosaur);
     park.addDinosaur(dinosaur2);
     park.addDinosaur(dinosaur3);
@@ -62,9 +64,6 @@ describe('Park', function() {
   });
 
   it('should be able to find the dinosaur that attracts the most visitors', function () {
-    dinosaur = new Dinosaur('t-rex', 'carnivore', 50);
-    dinosaur2 = new Dinosaur('t-rex', 'carnivore', 80);
-    dinosaur3 = new Dinosaur('branquio', 'carnivore', 20);
     park.addDinosaur(dinosaur);
     park.addDinosaur(dinosaur2);
     park.addDinosaur(dinosaur3);
