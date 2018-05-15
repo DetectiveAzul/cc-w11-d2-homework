@@ -12,7 +12,7 @@ describe('Park', function() {
     park = new Park('Jurassic Park', 20);
     dinosaur = new Dinosaur('t-rex', 'carnivore', 50);
     dinosaur2 = new Dinosaur('t-rex', 'carnivore', 80);
-    dinosaur3 = new Dinosaur('branquio', 'carnivore', 20);
+    dinosaur3 = new Dinosaur('branquio', 'hervibore', 20);
 
   })
 
@@ -69,6 +69,36 @@ describe('Park', function() {
     park.addDinosaur(dinosaur3);
     const actual = park.getMostVisited().guestsAttractedPerDay;
     assert.strictEqual(actual, 80);
+  });
+
+  it('should be able to get total number of visitors per day', function() {
+    park.addDinosaur(dinosaur);
+    park.addDinosaur(dinosaur2);
+    const actual = park.getNumberOfVisitPerDay();
+    assert.strictEqual(actual, 130);
+  });
+
+  it('should be able to get total number of visitors per year', function() {
+    park.addDinosaur(dinosaur);
+    park.addDinosaur(dinosaur2);
+    const actual = park.getNumberOfVisitPerYear();
+    assert.strictEqual(actual, 47450);
+  });
+
+  it('should be able to get total revenue for a year', function() {
+    park.addDinosaur(dinosaur);
+    park.addDinosaur(dinosaur2);
+    const actual = park.getRevenuePerYear();
+    assert.strictEqual(actual, 949000);
+
+  });
+
+  it('should be able to provide a list of dinosaurs in the park of each diet type', function() {
+    park.addDinosaur(dinosaur);
+    park.addDinosaur(dinosaur2);
+    park.addDinosaur(dinosaur3);
+    const actual = park.numberOfDinosaursByDiet().hervibore;
+    assert.strictEqual(actual, 1);
   });
 
 });

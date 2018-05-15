@@ -37,6 +37,32 @@ Park.prototype.sortByVisits = function () {
 Park.prototype.getMostVisited = function () {
   this.sortByVisits();
   return this.dinosaurs[0];
-}
+};
+
+Park.prototype.getNumberOfVisitPerDay = function() {
+  let total = 0;
+  this.dinosaurs.forEach( function(dinosaur) {
+    total += dinosaur.guestsAttractedPerDay;
+  });
+  return total;
+};
+
+Park.prototype.getNumberOfVisitPerYear = function() {
+  return this.getNumberOfVisitPerDay() * 365;
+};
+
+Park.prototype.getRevenuePerYear = function() {
+  return this.getNumberOfVisitPerYear() * this.ticketPrice;
+};
+
+Park.prototype.numberOfDinosaursByDiet = function() {
+  const tableOfDinosaurs = { };
+  for (let dinosaur of this.dinosaurs) {
+    tableOfDinosaurs[dinosaur.diet] == undefined ? tableOfDinosaurs[dinosaur.diet] = 1 : tableOfDinosaurs[dinosaur.diet]++;
+  }
+  return tableOfDinosaurs;
+};
+
+
 
 module.exports = Park;
