@@ -1,5 +1,5 @@
 const assert = require('assert');
-const Dinosaur = require('../models/dinosaur.js');
+const Dinosaur = require('../dinosaur.js');
 
 describe('Dinosaur', function() {
 

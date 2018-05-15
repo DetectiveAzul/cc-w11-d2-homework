@@ -1,6 +1,6 @@
 const assert = require('assert');
-const Park = require('../models/park.js');
-const Dinosaur = require('../models/dinosaur.js');
+const Park = require('../park.js');
+const Dinosaur = require('../dinosaur.js');
 
 describe('Park', function() {
 
