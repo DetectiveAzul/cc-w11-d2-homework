@@ -60,7 +60,7 @@ Park.prototype.getRevenuePerYear = function() {
 Park.prototype.numberOfDinosaursByDiet = function() {
   const tableOfDinosaurs = { };
   for (let dinosaur of this.dinosaurs) {
-    tableOfDinosaurs[dinosaur.diet] == undefined ? tableOfDinosaurs[dinosaur.diet] = 1 : tableOfDinosaurs[dinosaur.diet]++;
+    tableOfDinosaurs[dinosaur.diet] ? tableOfDinosaurs[dinosaur.diet]++ : tableOfDinosaurs[dinosaur.diet] = 1;
   }
   return tableOfDinosaurs;
 };
